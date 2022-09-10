@@ -14,7 +14,7 @@
 
 <script>
 import Listview from '../components/ListView'
-import db from '../firebase'
+import { db } from '../firebase'
 import { query, collection, getDocs } from "firebase/firestore";
 
 export default {

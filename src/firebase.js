@@ -3,6 +3,7 @@
 import firebase from 'firebase/app'
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from "firebase/firestore";
+import { getAuth } from 'firebase/auth'
 
 // firebase init - add your own config here
 const firebaseConfig  = {
@@ -15,16 +16,16 @@ const firebaseConfig  = {
     appId: process.env.VUE_APP_appId
 }
 
-// export default firebaseApp = firebase.initializeApp(firebaseConfig);
+
 export const firebaseApp = initializeApp(firebaseConfig);
+export const db = getFirestore(firebaseApp);
+export const auth = getAuth()
 
-// Initialize Cloud Firestore and get a reference to the service
-export const db = getFirestore();
 
-console.log(firebase);
-console.log(firebaseApp);
+// console.log(firebase);
+// console.log(firebaseApp);
 
-import { collection, addDoc, getDocs } from "firebase/firestore";
+// import { collection, addDoc, getDocs } from "firebase/firestore";
 
 //
 // try {

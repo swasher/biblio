@@ -30,14 +30,15 @@
 
 <script>
 import { ref } from 'vue' // used for conditional rendering - del watchEffect
-import { firebaseApp } from './firebase.js'
+import { firebaseApp } from './firebase'
+import { auth } from './firebase'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
 const isLoggedIn = ref(true)
 
 // runs after firebase is initialized
-firebaseApp.auth().onAuthStateChanged(function(user) {
+auth().onAuthStateChanged(function(user) {
   if (user) {
     isLoggedIn.value = true // if we have a user
   } else {
