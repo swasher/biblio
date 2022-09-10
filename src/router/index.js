@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import GridView from '../views/GridView.vue'
-import LoginView from '../views/LoginView'
-import UploadView from '../views/UploadView'
+import UploadView from '../views/UploadView.vue'
+import LoginView from '../views/LoginView.vue'
 
 const routes = [
   {
@@ -30,7 +30,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes
 })
 

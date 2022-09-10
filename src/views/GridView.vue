@@ -13,7 +13,7 @@
 
 
 <script>
-import Listview from '../components/ListView'
+import Listview from '../components/ListView.vue'
 import { db } from '../firebase'
 import { query, collection, getDocs } from "firebase/firestore";
 

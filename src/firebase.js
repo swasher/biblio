@@ -1,21 +1,20 @@
 /* eslint-disable */
 
-import firebase from 'firebase/app'
+// import firebase from 'firebase/app'
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from "firebase/firestore";
 import { getAuth } from 'firebase/auth'
 
 // firebase init - add your own config here
 const firebaseConfig  = {
-    apiKey: process.env.VUE_APP_apiKey,
-    authDomain: process.env.VUE_APP_authDomain,
-    databaseURL: process.env.VUE_APP_databaseURL,
-    projectId: process.env.VUE_APP_projectId,
-    storageBucket: process.env.VUE_APP_storageBucket,
-    messagingSenderId: process.env.VUE_APP_messagingSenderId,
-    appId: process.env.VUE_APP_appId
+    apiKey: import.meta.env.VITE_VUE_APP_apiKey,
+    authDomain: import.meta.env.VITE_VUE_APP_authDomain,
+    databaseURL: import.meta.env.VITE_VUE_APP_databaseURL,
+    projectId: import.meta.env.VITE_VUE_APP_projectId,
+    storageBucket: import.meta.env.VITE_VUE_APP_storageBucket,
+    messagingSenderId: import.meta.env.VITE_VUE_APP_messagingSenderId,
+    appId: import.meta.env.VITE_VUE_APP_appId
 }
-
 
 export const firebaseApp = initializeApp(firebaseConfig);
 export const db = getFirestore(firebaseApp);

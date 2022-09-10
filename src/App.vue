@@ -38,7 +38,7 @@ const router = useRouter()
 const isLoggedIn = ref(true)
 
 // runs after firebase is initialized
-auth().onAuthStateChanged(function(user) {
+auth.onAuthStateChanged(function(user) {
   if (user) {
     isLoggedIn.value = true // if we have a user
   } else {
