@@ -4,6 +4,8 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from "firebase/firestore";
 import { getAuth } from 'firebase/auth'
+import { createUserWithEmailAndPassword } from 'firebase/auth'
+
 
 // firebase init - add your own config here
 const firebaseConfig  = {
@@ -16,9 +18,14 @@ const firebaseConfig  = {
     appId: import.meta.env.VITE_VUE_APP_appId
 }
 
-export const firebaseApp = initializeApp(firebaseConfig);
-export const db = getFirestore(firebaseApp);
-export const auth = getAuth()
+const firebaseApp = initializeApp(firebaseConfig);
+const db = getFirestore(firebaseApp);
+const auth = getAuth(firebaseApp)
+
+export { auth, db, firebaseApp}
+
+
+
 
 
 // console.log(firebase);
